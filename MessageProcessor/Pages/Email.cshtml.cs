@@ -28,11 +28,17 @@ namespace MessageProcessor.Pages
 
 			string? emailSender = EmailDetails.MsgId;
             string? emailSubject = EmailDetails.Subject;
+			string? emailBody = EmailDetails.MsgBody;
+			string? emailReceiver = EmailDetails.MsgReciever;
 
-            gatherEmailInfo.storeSender.Add(emailSender);
+			gatherEmailInfo.storeSender.Add(emailSender);
             Console.WriteLine($"Sender {emailSender} was added to list");
             gatherEmailInfo.storeSubject.Add(emailSubject);
 			Console.WriteLine($"Subject {emailSubject} was added to list");
+			gatherEmailInfo.storeBody.Add(emailBody);
+			Console.WriteLine($"Subject {emailBody} was added to list");
+			gatherEmailInfo.storeSubject.Add(emailReceiver);
+			Console.WriteLine($"Subject {emailReceiver} was added to list");
 
 			return Page();
         }

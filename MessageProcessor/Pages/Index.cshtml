@@ -5,13 +5,9 @@
 }
 
 <form method="post">
-
-
 		<label asp-for="MessageDetails.MsgId">Sender:</label>
 		<input asp-for="MessageDetails.MsgId" />
-
 		<span class="text-danger">@Html.ValidationMessageFor(model => model.MessageDetails.MsgId)</span>
 		
 		<button type="submit">Enter</button>
-
 </form>

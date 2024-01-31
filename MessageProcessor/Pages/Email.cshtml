@@ -7,12 +7,33 @@
 	<div>
 	<label asp-for="EmailDetails.MsgId">Sender:</label>
 	<input asp-for="EmailDetails.MsgId" />
-</div>
+	</div>
 	
 	<div>
 	<label asp-for="EmailDetails.Subject">Subject:</label>
 	<input asp-for="EmailDetails.Subject" />
 	<span class="text-danger">@Html.ValidationMessageFor(model => model.EmailDetails.Subject)</span>
+	</div>
+
+	<div>
+		<label asp-for="EmailDetails.MsgBody">Email Body:</label>
+		<input asp-for="EmailDetails.MsgBody" />
+	</div>
+
+	<div>
+		<label asp-for="EmailDetails.MsgReciever">Receiver:</label>
+		<input asp-for="EmailDetails.MsgReciever" />
+	</div>
+
+	<div>
+		<table>
+			<thead>
+				<th>Sender</th>
+				<th>Subject</th>
+				<th>Message Body</th>
+			</thead>
+			<tbody></tbody>
+		</table>
 	</div>
 
 	<button type="submit">Process Message</button>
