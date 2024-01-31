@@ -1,0 +1,19 @@
+﻿@page
+@model MessageProcessor.Pages.EmailModel
+@{
+}
+<h1>EMAIL</h1>
+<form method="post">
+	<div>
+	<label asp-for="EmailDetails.MsgId">Sender:</label>
+	<input asp-for="EmailDetails.MsgId" />
+</div>
+	
+	<div>
+	<label asp-for="EmailDetails.Subject">Subject:</label>
+	<input asp-for="EmailDetails.Subject" />
+	<span class="text-danger">@Html.ValidationMessageFor(model => model.EmailDetails.Subject)</span>
+	</div>
+
+	<button type="submit">Process Message</button>
+</form>
