@@ -7,7 +7,6 @@
 			string emailSubject,
 			string emailBody,
 			string emailReceiver);
-
 	}
 
 	public class Email : ValidateMessage
@@ -34,10 +33,7 @@
 			{
 				return false;
 			}
-
 			return true;
 		}
 	}
-
-
 }

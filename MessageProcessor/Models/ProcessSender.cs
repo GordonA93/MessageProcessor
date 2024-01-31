@@ -7,13 +7,11 @@ namespace MessageProcessor.Models
     {
         public IActionResult ProcessInput(string sender)
         {
-            if (sender == ".com")
+            if (sender.Contains (".com") || sender.Contains("@"))
             {
-                Console.WriteLine("Redirecting to Email page");
                 return new RedirectToPageResult("/Email");
             } else
             {
-                Console.WriteLine("Redirecting to Error page");
                 return new RedirectToPageResult("/Error");
             }
         }

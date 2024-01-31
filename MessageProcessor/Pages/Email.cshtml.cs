@@ -9,13 +9,14 @@ namespace MessageProcessor.Pages
     public class EmailModel : PageModel
     {
         [BindProperty]
-		[StringLength(50, MinimumLength = 1, ErrorMessage = "The field must be between 2 and 50 characters.")]
 		public MsgDetails? EmailDetails { get; set; }
-        [BindProperty]
-        public MsgDetails? Subject { get; set; }
-        public void OnGet()
+		public StoreData? gatherEmailInfo = new StoreData();
+
+		public void OnGet()
         {
             EmailDetails = new MsgDetails();
+            gatherEmailInfo = new StoreData();
+   
         }
         public IActionResult OnPost()
         {
@@ -28,7 +29,12 @@ namespace MessageProcessor.Pages
 			string? emailSender = EmailDetails.MsgId;
             string? emailSubject = EmailDetails.Subject;
 
-            return Page();
+            gatherEmailInfo.storeSender.Add(emailSender);
+            Console.WriteLine($"Sender {emailSender} was added to list");
+            gatherEmailInfo.storeSubject.Add(emailSubject);
+			Console.WriteLine($"Subject {emailSubject} was added to list");
+
+			return Page();
         }
     }
 }
